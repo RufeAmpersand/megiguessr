@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "dart run build_runner build lib/ --delete-conflicting-outputs",
+			"label": "flutter: dart run build_runner watch",
+			"detail": "megidle",
+			"problemMatcher": [],
+			"isBackground": true,
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"dependsOn": [
+				"flutter: flutter pub get"
+			]
+		}
+	]
+}

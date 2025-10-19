@@ -1,0 +1,17 @@
+{
+	"task.allowAutomaticTasks": "on",
+	"task.saveBeforeRun": "always",
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 10000,
+	"emeraldwalk.runonsave": {
+		"commands": [
+			{
+				"match": ".dart$",
+				"isAsync": true,
+				"cmd": "dart run build_runner build lib/ --delete-conflicting-outputs"
+			},
+		]
+	},
+}

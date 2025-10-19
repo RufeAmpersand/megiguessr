@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		"dart-code.dart-code",
+		"dart-code.flutter",
+		"robert-brunhage.flutter-riverpod-snippets",
+		"blaxou.freezed",
+		"donjayamanne.githistory",
+		"ms-ceintl.vscode-language-pack-ja",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"emeraldwalk.runonsave"
+	]
+}
