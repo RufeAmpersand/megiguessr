@@ -41,4 +41,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-pubspec.lock
+
+# generate file
+*.gr.dart
+*.g.dart
+*.freezed.dart
+*.lock
