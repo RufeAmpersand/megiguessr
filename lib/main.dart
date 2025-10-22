@@ -3,11 +3,7 @@ import "package:hooks_riverpod/hooks_riverpod.dart";
 import "package:megidle/view/main_widget.dart";
 
 void main() {
-  runApp(
-    const ProviderScope(
-      child: MainApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -15,9 +11,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MainPage(),
-      title: "MegiGuessr",
-    );
+    return const MaterialApp(home: TopPage(), title: "MegiGuessr");
   }
 }
