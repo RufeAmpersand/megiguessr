@@ -1,20 +1,25 @@
 import "package:auto_route/auto_route.dart";
+import "package:megidle/view/game_widget.dart";
 import "package:megidle/view/main_widget.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
 
 part "app_router.gr.dart";
 part "app_router.g.dart";
 
-@riverpod
-class AppRouterProvider extends _$AppRouterProvider {
-  @override
-  Raw<AppRouter> build() {
-    return AppRouter();
-  }
+@Riverpod(keepAlive: true)
+Raw<AppRouter> appRouter(Ref ref) {
+  return AppRouter();
 }
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
   @override
-  List<AutoRoute> get routes => [AutoRoute(page: TopRoute.page, initial: true)];
+  List<AutoRoute> get routes => [
+    AutoRoute(page: MainRoute.page, initial: true),
+    AutoRoute(page: GameRoute.page),
+  ];
+
+  void pushGamePage() {
+    push(GameRoute());
+  }
 }

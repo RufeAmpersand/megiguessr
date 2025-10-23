@@ -3,14 +3,14 @@ import "package:flutter/material.dart";
 import "package:gradient_txt/gradient_text.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
 import "package:megidle/app_const.dart";
+import "package:megidle/presenter/main_presenter.dart";
 
 @RoutePage()
-class TopPage extends HookConsumerWidget {
-  const TopPage({super.key});
+class MainPage extends HookConsumerWidget {
+  const MainPage({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.deepPurpleAccent),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(5),
@@ -21,10 +21,13 @@ class TopPage extends HookConsumerWidget {
               GradientText(
                 text: "MegiGuessr",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                gradient: AppConstView.megidoGradient, 
+                gradient: AppConstView.megidoGradient,
               ),
               Text("表示される様々な情報からメギドの名前を当てましょう！"),
-              ElevatedButton(onPressed: () {}, child: Text("始める")),
+              ElevatedButton(
+                onPressed: ref.watch(mainPresenterProvider).pleasePushGamePage,
+                child: Text("始める"),
+              ),
             ],
           ),
         ),
