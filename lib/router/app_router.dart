@@ -6,7 +6,7 @@ import "package:riverpod_annotation/riverpod_annotation.dart";
 part "app_router.gr.dart";
 part "app_router.g.dart";
 
-@Riverpod(keepAlive: true)
+@riverpod
 Raw<AppRouter> appRouter(Ref ref) {
   return AppRouter();
 }
@@ -16,7 +16,7 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(page: MainRoute.page, initial: true),
-    AutoRoute(page: GameRoute.page),
+    AutoRoute(page: GameRoute.page, path: "/game"),
   ];
 
   void pushGamePage() {

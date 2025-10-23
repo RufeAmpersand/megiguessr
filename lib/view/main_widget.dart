@@ -11,24 +11,28 @@ class MainPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(5),
-          child: Column(
-            spacing: 20,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GradientText(
-                text: "MegiGuessr",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                gradient: AppConstView.megidoGradient,
-              ),
-              Text("表示される様々な情報からメギドの名前を当てましょう！"),
-              ElevatedButton(
-                onPressed: ref.watch(mainPresenterProvider).pleasePushGamePage,
-                child: Text("始める"),
-              ),
-            ],
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              spacing: 20,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GradientText(
+                  text: "MegiGuessr",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  gradient: AppConstView.megidoGradient,
+                ),
+                Text("表示される様々な情報からメギドの名前を当てましょう！"),
+                ElevatedButton(
+                  onPressed: ref
+                      .watch(mainPresenterProvider)
+                      .pleasePushGamePage,
+                  child: Text("始める"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
