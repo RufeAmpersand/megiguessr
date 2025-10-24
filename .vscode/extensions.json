@@ -8,6 +8,7 @@
 		"ms-ceintl.vscode-language-pack-ja",
 		"yzhang.markdown-all-in-one",
 		"davidanson.vscode-markdownlint",
-		"emeraldwalk.runonsave"
+		"emeraldwalk.runonsave",
+		"evils.vscode-flutter-riverpod-helper"
 	]
 }
