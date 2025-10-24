@@ -22,7 +22,7 @@ class MainPage extends HookConsumerWidget {
                 GradientText(
                   text: "MegiGuessr",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                  gradient: AppConstView.megidoGradient,
+                  gradient: megidoGradient,
                 ),
                 Text("表示される様々な情報からメギドの名前を当てましょう！"),
                 ElevatedButton(
