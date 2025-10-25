@@ -1,4 +1,4 @@
-import "package:megidle/router/app_router.dart";
+import "package:megiguessr/router/app_router.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
 
 part "main_presenter.g.dart";

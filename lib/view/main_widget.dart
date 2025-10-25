@@ -2,8 +2,8 @@ import "package:auto_route/auto_route.dart";
 import "package:flutter/material.dart";
 import "package:gradient_txt/gradient_text.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
-import "package:megidle/app_const.dart";
-import "package:megidle/presenter/main_presenter.dart";
+import "package:megiguessr/app_const.dart";
+import "package:megiguessr/presenter/main_presenter.dart";
 
 @RoutePage()
 class MainPage extends HookConsumerWidget {

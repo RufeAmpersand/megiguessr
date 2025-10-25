@@ -1,6 +1,6 @@
 import "package:auto_route/auto_route.dart";
-import "package:megidle/view/game_widget.dart";
-import "package:megidle/view/main_widget.dart";
+import "package:megiguessr/view/game_widget.dart";
+import "package:megiguessr/view/main_widget.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
 
 part "app_router.gr.dart";

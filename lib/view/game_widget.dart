@@ -1,7 +1,7 @@
 import "package:auto_route/annotations.dart";
 import "package:flutter/material.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
-import "package:megidle/presenter/game_presenter.dart";
+import "package:megiguessr/presenter/game_presenter.dart";
 
 @RoutePage()
 class GamePage extends HookConsumerWidget {

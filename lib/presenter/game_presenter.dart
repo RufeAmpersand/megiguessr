@@ -1,4 +1,4 @@
-import "package:megidle/interactor/megido_list_interactor.dart";
+import "package:megiguessr/interactor/megido_list_interactor.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
 
 part "game_presenter.g.dart";

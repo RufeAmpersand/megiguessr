@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
-import "package:megidle/router/app_router.dart";
+import "package:megiguessr/router/app_router.dart";
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
