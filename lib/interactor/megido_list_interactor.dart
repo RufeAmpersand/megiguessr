@@ -1,7 +1,7 @@
 import "dart:convert";
 
 import "package:flutter/services.dart";
-import "package:megidle/entity/megido_list_entity.dart";
+import "package:megiguessr/entity/megido_list_entity.dart";
 import "package:riverpod_annotation/riverpod_annotation.dart";
 
 part "megido_list_interactor.g.dart";
