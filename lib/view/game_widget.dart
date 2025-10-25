@@ -1,6 +1,7 @@
 import "package:auto_route/annotations.dart";
 import "package:flutter/material.dart";
 import "package:hooks_riverpod/hooks_riverpod.dart";
+import "package:megidle/presenter/game_presenter.dart";
 
 @RoutePage()
 class GamePage extends HookConsumerWidget {
@@ -8,6 +9,7 @@ class GamePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final gamePresenter = ref.watch(gamePresenterProvider);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -42,6 +44,7 @@ class GamePage extends HookConsumerWidget {
                         ),
                       ),
                     ),
+                    Text(gamePresenter.presentDebugList()),
                   ],
                 ),
               ),

@@ -15,9 +15,10 @@ sealed class Megido with _$Megido {
     required int number,
     required String name,
     required Style style,
+    @JsonKey(name: "class") required MegidoClassEnum megidoClass,
     required int gauge,
     required Obtain obtain,
-    required DateTime implement_day,
+    required String implement_day,
     required Gender gender,
     required String cv,
     required String trait,
@@ -42,20 +43,30 @@ enum Series {
 
 @JsonEnum(valueField: "value")
 enum Style {
+  rush("ラッシュ"),
+  counter("カウンター"),
+  burst("バースト");
+
+  final String value;
+  const Style(this.value);
+}
+
+@JsonEnum(valueField: "value")
+enum MegidoClassEnum {
   fighter("ファイター"),
   trooper("トルーパー"),
   sniper("スナイパー");
 
   final String value;
 
-  const Style(this.value);
+  const MegidoClassEnum(this.value);
 }
 
 @JsonEnum(valueField: "value")
 enum Obtain {
-  normal("通常"),
+  story("メイン"),
   event("イベント"),
-  gacha("ガチャ"),
+  summon("召喚"),
   terminus("テルミナス"),
   singularity("シンギュラリティ");
 
@@ -66,8 +77,8 @@ enum Obtain {
 
 @JsonEnum(valueField: "value")
 enum Gender {
-  male("男"),
-  female("女");
+  male("男性"),
+  female("女性");
 
   final String value;
 
