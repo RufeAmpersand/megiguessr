@@ -18,6 +18,11 @@ class MegidoListInteractor extends _$MegidoListInteractor {
   }
 
   String getDebugText() {
-    return _megidoList.toString();
+    switch (_megidoList) {
+      case MegidoList list?:
+        return list.megido_list.first.toString();
+      case null:
+        return "";
+    }
   }
 }

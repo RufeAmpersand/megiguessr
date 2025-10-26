@@ -9,48 +9,59 @@ class GamePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final gamePresenter = ref.watch(gamePresenterProvider);
+    final GamePresenter gamePresenter = ref.watch(gamePresenterProvider);
     return Scaffold(
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(20),
-          child: Center(
-            child: Card(
-              child: Container(
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 10,
-                  children: [
-                    Text(
-                      "難易度設定",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(
-                          Colors.deepPurpleAccent,
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "スタート！",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Text(gamePresenter.presentDebugList()),
-                  ],
+          alignment: AlignmentGeometry.center,
+          child: Wrap(
+            children: [
+              questionMegidoCardWidget(gamePresenter),
+              difficultySelectWidgets(gamePresenter),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Card difficultySelectWidgets(GamePresenter presenter) {
+    return Card(
+      child: Container(
+        padding: EdgeInsets.all(20),
+        child: Wrap(
+          children: [
+            Text(
+              "難易度設定",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(
+                  Colors.deepPurpleAccent,
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                "スタート！",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-          ),
+          ],
         ),
+      ),
+    );
+  }
+
+  Card questionMegidoCardWidget(GamePresenter presenter) {
+    return Card(
+      child: Container(
+        padding: EdgeInsets.all(20),
+        child: Text(presenter.presentDebugList()),
       ),
     );
   }

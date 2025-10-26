@@ -7,9 +7,6 @@ part "megido_entity.g.dart";
 
 @freezed
 sealed class Megido with _$Megido {
-  // series	number	name	style	class	gauge	obtain
-  // implement_day	gender	cv	trait	masseffect is_regenerate
-
   factory Megido({
     required Series series,
     required int number,
@@ -27,6 +24,39 @@ sealed class Megido with _$Megido {
   }) = _Megido;
 
   factory Megido.fromJson(Map<String, dynamic> json) => _$MegidoFromJson(json);
+}
+
+extension MegidoUtil on Megido {
+  String getMemberInVisibleString(MegidoMember member) {
+    switch (member) {
+      case MegidoMember.series:
+        return series.value;
+      case MegidoMember.number:
+        return number.toString();
+      case MegidoMember.name:
+        return name;
+      case MegidoMember.style:
+        return style.value;
+      case MegidoMember.megidoClass:
+        return megidoClass.value;
+      case MegidoMember.gauge:
+        return gauge.toString();
+      case MegidoMember.obtain:
+        return obtain.value;
+      case MegidoMember.implementDay:
+        return implement_day;
+      case MegidoMember.gender:
+        return gender.value;
+      case MegidoMember.cv:
+        return cv;
+      case MegidoMember.trait:
+        return trait;
+      case MegidoMember.masseffect:
+        return masseffect;
+      case MegidoMember.isRegenerate:
+        return is_regenerate ? "はい" : "いいえ";
+    }
+  }
 }
 
 @JsonEnum(valueField: "value")
@@ -83,4 +113,20 @@ enum Gender {
   final String value;
 
   const Gender(this.value);
+}
+
+enum MegidoMember {
+  series,
+  number,
+  name,
+  style,
+  megidoClass,
+  gauge,
+  obtain,
+  implementDay,
+  gender,
+  cv,
+  trait,
+  masseffect,
+  isRegenerate,
 }
