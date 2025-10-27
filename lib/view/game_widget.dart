@@ -17,7 +17,7 @@ class GamePage extends HookConsumerWidget {
           alignment: AlignmentGeometry.center,
           child: Wrap(
             children: [
-              questionMegidoCardWidget(gamePresenter),
+              exampleMegidoCardWidget(gamePresenter),
               difficultySelectWidgets(gamePresenter),
             ],
           ),
@@ -55,6 +55,10 @@ class GamePage extends HookConsumerWidget {
         ),
       ),
     );
+  }
+
+  Card exampleMegidoCardWidget(GamePresenter presenter) {
+    return questionMegidoCardWidget(presenter);
   }
 
   Card questionMegidoCardWidget(GamePresenter presenter) {

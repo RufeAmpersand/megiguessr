@@ -12,6 +12,10 @@ class GamePresenter extends _$GamePresenter {
     return this;
   }
 
+  // StageQuestion getPreviewQuestion(){
+  //   return
+  // }
+
   String presentDebugList() {
     return megidoListInteractor.getDebugText();
   }
