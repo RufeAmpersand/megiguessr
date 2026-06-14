@@ -29,7 +29,7 @@ class GamePage extends HookConsumerWidget {
   Card difficultySelectWidgets(GamePresenter presenter) {
     return Card(
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(5),
         child: Wrap(
           children: [
             Text(
@@ -64,7 +64,7 @@ class GamePage extends HookConsumerWidget {
   Card questionMegidoCardWidget(GamePresenter presenter) {
     return Card(
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(5),
         child: Text(presenter.presentDebugList()),
       ),
     );

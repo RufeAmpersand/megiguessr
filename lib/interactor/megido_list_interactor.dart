@@ -14,21 +14,22 @@ class MegidoListInteractor extends _$MegidoListInteractor {
     await rootBundle.loadString("assets/megido_list.json").then((value) {
       final List<dynamic> list = json.decode(value);
       _megidoList = list.map((data) => Megido.fromJson(data)).toList();
-      ref.notifyListeners();
     });
     return this;
   }
 
-  List<Megido> getMegidoList() {
-    return _megidoList ?? [];
+  List<Megido>? getMegidoList() {
+    switch (state) {
+      case AsyncLoading<MegidoListInteractor>():
+        return null;
+      case AsyncData<MegidoListInteractor>():
+        return state.value!._megidoList!;
+      case AsyncError<MegidoListInteractor>():
+        throw state.error!;
+    }
   }
 
   String getDebugText() {
-    switch (_megidoList) {
-      case List<Megido> list:
-        return list.first.toString();
-      case null:
-        return "";
-    }
+    return getMegidoList()?.first.toString() ?? "";
   }
 }
